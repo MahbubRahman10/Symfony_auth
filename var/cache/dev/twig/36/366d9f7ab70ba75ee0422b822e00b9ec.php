@@ -65,7 +65,7 @@ class __TwigTemplate_0e02e6b85bd2aa074c81824b81d2273a extends Template
         ";
         // line 14
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 19
+        // line 23
         yield "    </body>
 </html>
 ";
@@ -128,7 +128,16 @@ class __TwigTemplate_0e02e6b85bd2aa074c81824b81d2273a extends Template
 
         // line 15
         yield "
+
         <h1>Hello, Symfony</h1>
+
+        <a href=\"/";
+        // line 19
+        yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19)) ? ("logout") : ("login"));
+        yield "\"> ";
+        yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19)) ? ("logout") : ("login"));
+        yield " </a>
+
 
         ";
         
@@ -150,7 +159,7 @@ class __TwigTemplate_0e02e6b85bd2aa074c81824b81d2273a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  130 => 15,  123 => 14,  115 => 11,  108 => 10,  100 => 8,  93 => 7,  79 => 5,  69 => 19,  67 => 14,  63 => 12,  61 => 10,  58 => 9,  56 => 7,  51 => 5,  45 => 1,);
+        return array (  136 => 19,  130 => 15,  123 => 14,  115 => 11,  108 => 10,  100 => 8,  93 => 7,  79 => 5,  69 => 23,  67 => 14,  63 => 12,  61 => 10,  58 => 9,  56 => 7,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -170,7 +179,11 @@ class __TwigTemplate_0e02e6b85bd2aa074c81824b81d2273a extends Template
     <body>
         {% block body %}
 
+
         <h1>Hello, Symfony</h1>
+
+        <a href=\"/{{ app.user ? 'logout' : 'login' }}\"> {{ app.user ? 'logout' : 'login' }} </a>
+
 
         {% endblock %}
     </body>

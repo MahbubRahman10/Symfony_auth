@@ -13,7 +13,11 @@
     <body>
         {% block body %}
 
+
         <h1>Hello, Symfony</h1>
+
+        <a href="/{{ app.user ? 'logout' : 'login' }}"> {{ app.user ? 'logout' : 'login' }} </a>
+
 
         {% endblock %}
     </body>
