@@ -65,7 +65,7 @@ class __TwigTemplate_0e02e6b85bd2aa074c81824b81d2273a extends Template
         ";
         // line 14
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 23
+        // line 28
         yield "    </body>
 </html>
 ";
@@ -138,7 +138,17 @@ class __TwigTemplate_0e02e6b85bd2aa074c81824b81d2273a extends Template
         yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19)) ? ("logout") : ("login"));
         yield " </a>
 
+        ";
+        // line 21
+        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21)) {
+            // line 22
+            yield "
+        <h2>This is Test</h2>
 
+        ";
+        }
+        // line 26
+        yield "
         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -159,7 +169,7 @@ class __TwigTemplate_0e02e6b85bd2aa074c81824b81d2273a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  136 => 19,  130 => 15,  123 => 14,  115 => 11,  108 => 10,  100 => 8,  93 => 7,  79 => 5,  69 => 23,  67 => 14,  63 => 12,  61 => 10,  58 => 9,  56 => 7,  51 => 5,  45 => 1,);
+        return array (  151 => 26,  145 => 22,  143 => 21,  136 => 19,  130 => 15,  123 => 14,  115 => 11,  108 => 10,  100 => 8,  93 => 7,  79 => 5,  69 => 28,  67 => 14,  63 => 12,  61 => 10,  58 => 9,  56 => 7,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -184,6 +194,11 @@ class __TwigTemplate_0e02e6b85bd2aa074c81824b81d2273a extends Template
 
         <a href=\"/{{ app.user ? 'logout' : 'login' }}\"> {{ app.user ? 'logout' : 'login' }} </a>
 
+        {% if app.user %}
+
+        <h2>This is Test</h2>
+
+        {% endif %}
 
         {% endblock %}
     </body>

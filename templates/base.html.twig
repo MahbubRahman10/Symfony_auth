@@ -18,6 +18,11 @@
 
         <a href="/{{ app.user ? 'logout' : 'login' }}"> {{ app.user ? 'logout' : 'login' }} </a>
 
+        {% if app.user %}
+
+        <h2>This is Test</h2>
+
+        {% endif %}
 
         {% endblock %}
     </body>
